@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Second.Website.Model.AboutUS>
+
+@{
+    ViewBag.Title = "关于我们信息管理页";
+}
+<marquee scrollamount="8" direction="up" behavior="slide">
+    <h2>关于我们信息管理</h2>
+</marquee>
+<marquee scrollamount="2" direction="up" behavior="slide">
+    <h4>本页面内容显示于前台的AbouUS模块</h4>
+</marquee>
+
+<style>
+    table {
+        text-align: center;
+    }
+
+        table tr th {
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+          table tr th:first-child {
+                width: 110px;
+            }
+            table tr th:last-child {
+                width: 280px;
+            }
+
+        table tr td {
+            vertical-align:middle;
+            border: 1px solid #ddd;
+        }
+
+            table tr td.classTh {
+                padding: 20px 0;
+            }
+</style>
+<table class="table">
+    <tr>
+        <th>          
+            关于我们标题
+        </th>
+        <th>
+            关于我们内容
+        </th>
+        <th>
+            关于我们详细
+        </th>
+        <th style="text-align:center;width:100px">
+            操作管理
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td style="vertical-align:middle">
+            @Html.DisplayFor(modelItem => item.AboutTitle)
+        </td>
+        <td style="vertical-align:middle">
+            @Html.DisplayFor(modelItem => item.AboutContent)
+        </td>
+        <td style="vertical-align:middle">
+            @Html.TextAreaFor(modelItem => item.AboutUsMoreLink, 5, 20, htmlAttributes: new { })
+        </td>
+        <td style="vertical-align:middle">
+            @Html.ActionLink("编辑信息", "UpdateAboutUS", new { id = item.AboutID })
+        </td>
+    </tr>
+}
+
+</table>
+<div style="margin:30px auto; width:120px;font-weight:bold;">
+    @Html.ActionLink("返回后台管理首页", "Index")
+</div>

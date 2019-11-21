@@ -1,0 +1,135 @@
+﻿@model Second.Website.Model.SubpageProduct
+@using Second.Website.Model
+@{
+    ViewBag.Title = "产品编辑页";
+}
+
+<h2>编辑产品信息</h2>
+
+@using (Html.BeginForm("UpdateSubpageProduct", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ProductID)
+        @Html.HiddenFor(model => model.ProductPhotoFile)
+        @Html.HiddenFor(model => model.ProductTime)
+        <div class="form-group">
+            @Html.Label("产品名称", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("产品信息", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ProductInfo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ProductInfo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("产品发布时间", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ProductTime, new { htmlAttributes = new { @class = "form-control", disabled = "disabled " } })
+                @Html.ValidationMessageFor(model => model.ProductTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("产品当前图标", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <img src = "@Html.DisplayFor(model => model.ProductPhotoFile)" alt="产品图标" width="260" height="230" />
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("上传产品图标", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">              
+                <input type="file" name="images" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("产品类别", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">             
+                <select name="ClassID">
+                    <option value="1">电脑产品</option>
+                    <option value="2">手机产品</option>
+                    <option value="3">科技商品</option>
+                </select>
+                当前分类为<span>
+                    @if (Model.ClassID == 1)
+                    {
+                        @Html.DisplayName("【电脑产品】");
+                    }
+                    @if (Model.ClassID == 2)
+                    {
+                        @Html.DisplayName("【手机产品】");
+                    }
+                    @if (Model.ClassID == 3)
+                    {
+                        @Html.DisplayName("【科技商品】");
+                    }
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("是否为特色产品", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">             
+                <select name="Features">
+                    <option value="0">非特色产品</option>
+                    <option value="1">特色产品</option>
+                </select>
+                当前分类为<span>
+                    @if (Model.Features == 0)
+                {
+                        @Html.DisplayName("【非特色产品】");
+                }
+                    @if (Model.Features == 1)
+                {
+                        @Html.DisplayName("【特色产品】");
+                }
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("电脑版下载地址（完整的URL）", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PcDownLink, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PcDownLink, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("安卓版下载地址（完整的URL）", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ardDownLink, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ardDownLink, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("IOS版下载地址（完整的URL）", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.iosDownLink, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.iosDownLink, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("科技商品购买地址（完整的URL）", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BuyLink, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BuyLink, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="保存编辑" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<div style="margin:30px auto; width:350px;font-weight:bold">
+    @Html.ActionLink("返回产品信息管理页", "ShowSubpageProduct") &nbsp;丨&nbsp;@Html.ActionLink("返回后台首页", "Index")
+</div>

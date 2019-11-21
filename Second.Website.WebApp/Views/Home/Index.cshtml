@@ -1,0 +1,327 @@
+﻿
+@{
+    Layout = null;
+}
+@*@model IEnumerable<Second.Website.Model.HomeCor>*@
+@using Second.Website.Model
+@model Second.Website.Model.HomeCor
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="这里是网页的关键字，填写后方便SEO">
+    <meta name="description" content="这里是网页的介绍">
+    <!--视口检测-->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"
+          id="viewport" />
+    <title>@Html.DisplayFor(modelItem => modelItem.IndexTitle)</title>
+    <!--引入网页ICO图标 在网页的title 之前显示-->
+    <link rel="shortcut icon" href="~/Content/Second/favicon.ico" />
+
+    <!--引入CSS样式文件-->
+    <link type="text/css" rel="stylesheet" href="~/Content/Second/css/topBack.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/Second/css/index.css">
+    <!--Pad端 css样式-->
+    <link rel="stylesheet" href="~/Content/Second/css/pad.css" media="(min-width:541px) and (max-width:970px)" />
+    <!--移动手机端 css样式-->
+    <link rel="stylesheet" href="~/Content/Second/css/mobile.css" media="(max-width:540px)" />
+
+    <!--引入js-->
+    <script type="text/javascript" src="~/Content/Second/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <script type="text/javascript" src="~/Content/Second/js/index.js"></script>
+</head>
+<body>
+    <!--右侧浮动返回顶部菜单代码开始(手机端去掉)-->
+    <div class="toolbar">
+        <a href="###" class="toolbar-item toolbar-item-weixin">
+            <span class="toolbar-layer"></span>
+        </a>
+        <a href="###" class="toolbar-item toolbar-item-feedback"></a>
+        <a href="###" class="toolbar-item toolbar-item-app">
+            <span class="toolbar-layer"></span>
+        </a>
+        <a href="javascript:scroll(0,0)" id="top" class="toolbar-item toolbar-item-top"></a>
+    </div>
+    <!--右侧浮动菜单代码结束-->
+    <!--网页主体头部-->
+    <header>
+        <div class="head">
+            <div class="logo">
+                <!--<h1>网页LOGO</h1>-->
+                @*<img src="~/Content/Second/images/logo.png" alt="02小组">*@
+                <img src="@Html.DisplayFor(modelItem => modelItem.Companylogo)" alt="02小组">
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="#aMark">公司介绍</a></li>
+                    <li><a href="#pMark">产品服务</a></li>
+                    <li><a href="#tMark">团队阵容</a></li>
+                    <li><a href="#cMark">联系我们</a></li>
+                    <li><img src="/Content/Second/images/head_nav_menu_o.png" alt="更多" title="展开更多"></li>
+                </ul>
+            </div>
+
+            <!--手机端和Pad端导航菜单-->
+            <div class="m-nav">
+                <img src="/Content/Second/images/head_nav_menu_o.png" alt="更多" title="展开更多" id="m_nav_menu">
+            </div>
+            <div class="m-inner-nav">
+                <a href="/">首页</a>
+                <a href="#aMark">公司介绍</a>
+                <a href="#pMark">产品服务</a>
+                <a href="#tMark">团队阵容</a>
+                <a href="#cMark">联系我们</a>
+                <a href="###">招贤纳士</a>
+            </div>
+            <!--手机端和Pad端导航菜单结束-->
+
+        </div>
+    </header>
+
+    <!--网页轮播图-->
+    <div class="wrap" id="wrap">
+        <ul class="banner">
+            <li><img src="~/Content/Second/images/banner_1.png" alt="02小组轮播"></li>
+            <li><img src="~/Content/Second/images/banner_2.png" alt="02小组轮播"></li>
+            <li><img src="~/Content/Second/images/banner_3.png" alt="02小组轮播"></li>
+            <li><img src="~/Content/Second/images/banner_4.png" alt="02小组轮播"></li>
+        </ul>
+        <div class="bannerText"><span>企业核心<br />@Html.Raw(Model.CompanyCulture)</span><span><a href="###">前往体验</a></span></div>
+        <ul class="menu"></ul>
+    </div>
+
+    <!--网页主体内容-->
+    <section>
+        <div class="main">
+
+            <!--1.公司介绍-->
+            <div class="show aboutus" id="aMark">
+                <div class="aboutCentent">
+                    <div class="centent">
+                        <div class="title">
+                            <img src="~/Content/Second/images/about.png" alt="关于我们">
+                        </div>
+                        <div class="about">
+                            <h4 class="a_title">关于本公司</h4>
+                        </div>
+                    </div>
+                   @foreach (var item in (ViewBag.About as List<AboutUS>))
+                   {
+                    <div class="t_title">
+                        <h3>@item.AboutTitle</h3>
+                    </div>
+                    <div class="main_txt">
+                        <p>
+                          @Html.Raw(item.AboutContent)<a href="@item.AboutUsMoreLink" target="">【了解更多】</a>
+                        </p>
+                    </div>
+                    }
+                    
+                    <div class="icons">
+                        <ul>
+                            <li>
+                                <img src="~/Content/Second/images/icon/icon01.png">
+                                <p class="icon_title">信誉第一</p>
+                                <p class="txt">我们公司运营超过十年</p>
+                                <p class="txt">皆以诚信为本</p>
+                            </li>
+                            <li>
+                                <img src="~/Content/Second/images/icon/icon02.png">
+                                <p class="icon_title">合作融资</p>
+                                <p class="txt">我们可以让您的投资变</p>
+                                <p class="txt">得更加有价值</p>
+                            </li>
+                            <li>
+                                <img src="~/Content/Second/images/icon/icon03.png">
+                                <p class="icon_title">经验丰富</p>
+                                <p class="txt">我们公司经历了十年风</p>
+                                <p class="txt">雨拥有丰富经验</p>
+                            </li>
+                            <li class="last_icon">
+                                <img src="~/Content/Second/images/icon/icon04.png">
+
+                                <p class="icon_title">团队开发</p>
+                                <p class="txt">我们拥有强大的团队让</p>
+                                <p class="txt">项目开发更简单</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--2.产品展示：PC端展示6个产品 分两行展示-->
+            <div class="show products" id="pMark">
+                <div class="productsContent">
+                    <div class="title02">
+                        <img src="~/Content/Second/images/title02.png">
+                    </div>
+                    <div class="event_title">
+                        <img src="~/Content/Second/images/xian03.png">
+                        <h4 class="c_show">特色产品</h4>
+                    </div>
+                    <div class="products_list">
+                        <ul>
+                            @foreach (var item in (ViewBag.HomeFeaturesList as List<SubpageProduct>))
+                            {
+                                <li>
+                                    <div class="img_box">
+                                        <a href="###">
+                                            <img src="@item.ProductPhotoFile" alt="产品小图" width="90" height="90">
+                                        </a>
+                                    </div>
+                                    <div class="products_Info">
+                                        <h5>@item.ProductName</h5>
+                                        <p>@item.ProductInfo</p>
+                                        <div class="download_box">
+                                            <div class="btn_box">
+                                                <a href="###">更多介绍</a>
+                                                <a href="@item.PcDownLink">点击下载</a>
+                                                <p>@item.ProductTime.ToShortDateString()</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            }                         
+                        </ul>
+                    </div>
+                    <div class="btn">
+                        <a href="Home/Product" title="更多产品" target="_blank">MORE<span>+</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!--3.团队成员介绍-->
+            <div class="show team" id="tMark">
+                <div class="teamBox">
+                    <div class="title03">
+                        <img src="~/Content/Second/images/title03.png">
+                    </div>
+                    <div class="event_title">
+                        <img src="~/Content/Second/images/xian03.png">
+                        <h4 class="c_show">团队成员</h4>
+                    </div>
+                    <div class="teamPic">
+                        <ul>
+                            @foreach (var item in ViewBag.HomeEmployeeList)
+                            {
+                                <li>
+                                    <div class="port-1 effect-2">
+                                        <img src="@item.EmpoloyeePhoto" alt="团队成员图片">
+                                        <div class="text-desc">
+                                            <h3>@item.EmpoloyeeName</h3>
+                                            <p><b>项目负责：</b><span>@item.EmpoloyeePost</span></p>
+                                            <p>@item.EmpoloyeeInfo</p>
+                                            <a href="###" class="t_btn">详细介绍</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                            @*<li>
+                                    <div class="port-1 effect-2">
+                                        <img src="~/Content/Second/images/teamDemo.jpg" alt="团队成员图片">
+                                        <div class="text-desc">
+                                            <h3>韦德刚</h3>
+                                            <p><b>项目负责：</b><span>暂无介绍</span></p>
+                                            <p>这里填写简单介绍（内容不超过20字符）。前端程序员前端程序员。</p>
+                                            <a href="###" class="t_btn">详细介绍</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-1 effect-2">
+                                        <img src="~/Content/Second/images/teamDemo.jpg" alt="团队成员图片">
+                                        <div class="text-desc">
+                                            <h3>莫明靖</h3>
+                                            <p><b>项目负责：</b><span>暂无介绍</span></p>
+                                            <p>这里填写简单介绍（内容不超过20字符）。前端程序员前端程序员。</p>
+                                            <a href="###" class="t_btn">详细介绍</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-1 effect-2">
+                                        <img src="~/Content/Second/images/teamDemo.jpg" alt="团队成员图片">
+                                        <div class="text-desc">
+                                            <h3>蓝李识</h3>
+                                            <p><b>项目负责：</b><span>暂无介绍</span></p>
+                                            <p>这里填写简单介绍（内容不超过20字符）。前端程序员前端程序员。</p>
+                                            <a href="###" class="t_btn">详细介绍</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-1 effect-2">
+                                        <img src="~/Content/Second/images/teamDemo.jpg" alt="团队成员图片">
+                                        <div class="text-desc">
+                                            <h3>虚位以待</h3>
+                                            <p><b>项目负责：</b><span>暂无介绍</span></p>
+                                            <p>这里填写简单介绍（内容不超过20字符）。前端程序员前端程序员。</p>
+                                            <a href="###" class="t_btn">详细介绍</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-1 effect-2">
+                                        <img src="~/Content/Second/images/teamDemo.jpg" alt="团队成员图片">
+                                        <div class="text-desc">
+                                            <h3>虚位以待</h3>
+                                            <p><b>项目负责：</b><span>暂无介绍</span></p>
+                                            <p>这里填写简单介绍（内容不超过20字符）。前端程序员前端程序员。。</p>
+                                            <a href="###" class="t_btn">详细介绍</a>
+                                        </div>
+                                    </div>
+                                </li>*@
+                        </ul>
+                    </div>
+                    <div class="btn">
+                        <a href="teams.html" title="团队中心" target="_blank">MORE<span>+</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!--4.关于公司的地址（API百度地图插入）-->
+            <div class="show address" id="cMark">
+                <div class="addressContent">
+                    <div class="title04">
+                        <img src="~/Content/Second/images/title04.png">
+                    </div>
+                    <div class="event_title">
+                        <img src="~/Content/Second/images/xian03.png">
+                        <h4 class="c_show">公司地址</h4>
+                    </div>
+                    <div class="companyMapInfo">
+                        <h3>详细地址</h3>
+                        <p>
+                            工作室地址：@Html.DisplayFor(modelItem => modelItem.CompanyAddress)<br />
+                            公交车路线：@Html.DisplayFor(modelItem => modelItem.CompanyRoute)<br />
+                            联系&nbsp;电话：@Html.DisplayFor(modelItem => modelItem.Telephone)<br />
+                            工作室邮箱：@Html.DisplayFor(modelItem => modelItem.Email)
+                        </p>
+                    </div>
+                    <div id="dituContent" class="ditu"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--网页内容底部-->
+    <footer class="footer">
+        <div class="follow_box">
+            <h5>成为我们的粉丝</h5>
+            <ul>
+                <li class="wechat"><a href="###"></a></li>
+                <li class="sina"><a href="###"></a></li>
+                <li class="forum"><a href="###"></a></li>
+                <li class="post"><a href="###"></a></li>
+            </ul>
+            <div class="cl"></div>
+        </div>
+        <span><img src="~/Content/Second/images/love.gif" alt="我们一直用心在做"></span>
+        <p><a href="###">关于我们</a><a href="###">联系我们</a><a href="###">加入我们</a><a href="###">客户服务</a></p>
+        <p>Copyright &copy; @DateTime.Now.Year @Html.DisplayFor(model => model.CompanyCopyright) All Rights Reserved</p>
+    </footer>
+</body>
+</html>

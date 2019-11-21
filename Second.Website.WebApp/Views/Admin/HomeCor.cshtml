@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Second.Website.Model.HomeCor>
+
+@{
+    ViewBag.Title = "前台主页的基本信息管理";
+}
+<marquee scrollamount="8" direction="up" behavior="slide">
+    <h2>前台主页的基本信息管理</h2>
+</marquee>
+<marquee scrollamount="2" direction="up" behavior="slide">
+    <h4>本页面主要管理主页的基本信息</h4>
+</marquee>
+<style>
+    table {
+        text-align: center;
+    }
+
+        table tr th {
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+            table tr th:nth-child(2) {
+                width: 144px;
+            }
+
+            table tr th:nth-child(3) {
+                width: 200px;
+            }
+
+            table tr th:nth-child(4) {
+                width: 100px;
+            }
+
+            table tr th:nth-child(5) {
+                width: 120px;
+            }
+
+            table tr th:last-child {
+                width: 80px;
+            }
+
+        table tr td {
+            border: 1px solid #ddd;
+        }
+
+   table tr td.classTh {
+        padding:20px 0;
+    }
+</style>
+<table class="table">
+    <tr>
+        <th>
+            网站标题
+        </th>
+        <th>
+            网站logo
+        </th>
+        <th>
+            企业文化（轮播图中间）
+        </th>
+        <th>
+            公司地址
+        </th>
+        <th>
+            到达公司路线
+        </th>
+        <th>
+            公司版权
+        </th>
+        <th>
+          
+            公司电话
+        </th>
+        <th>
+           
+            企业邮箱
+        </th>
+        <th>
+            操作管理
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="classTh" style="vertical-align:middle">
+                @Html.DisplayFor(modelItem => item.IndexTitle)
+            </td>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.Companylogo)" alt="Alternate Text" width="144" height="64" />
+            </td>
+            <td class="classTh" style="vertical-align:middle">
+                @Html.DisplayFor(modelItem => item.CompanyCulture)
+            </td>
+            <td class="classTh" style="vertical-align:middle">
+                @Html.DisplayFor(modelItem => item.CompanyAddress)
+            </td>
+            <td class="classTh" style="vertical-align:middle">
+                @Html.DisplayFor(modelItem => item.CompanyRoute)
+            </td>
+            <td class="classTh" style="vertical-align:middle">
+                @Html.DisplayFor(modelItem => item.CompanyCopyright)
+            </td>
+            <td class="classTh" style="vertical-align:middle">
+                @Html.DisplayFor(modelItem => item.Telephone)
+            </td>
+            <td class="classTh" style="vertical-align:middle">
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td class="classTh" style="vertical-align:middle">
+                @Html.ActionLink("编辑信息", "EditHomeCor", new { id = item.IndexID })
+            </td>
+        </tr>
+    }
+
+</table>
+<div style="margin:30px auto; width:120px">
+    @Html.ActionLink("返回后台管理首页", "Index")
+</div>

@@ -1,0 +1,97 @@
+﻿@model Second.Website.Model.UserInfo
+
+@{
+    ViewBag.Title = "删除一个管理员";
+}
+<style>
+    div dl dt {
+        height: 50px;
+        line-height:50px;
+    }
+     div dl dd {
+        height: 50px;
+        line-height:50px;
+    }
+</style>
+<marquee scrollamount="10" direction="up" behavior="slide">
+            <h2>删除一个管理员的信息</h2>
+</marquee>
+<marquee scrollamount="2" direction="up" behavior="slide">
+    <h4>本操作执行后不可恢复，请谨慎操作！</h4>
+</marquee>
+
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div style="width:400px;margin:0 auto">    
+    <dl class="dl-horizontal">
+        @Html.HiddenFor(model => model.UserID)
+        @Html.HiddenFor(model => model.UserName)
+        @Html.HiddenFor(model => model.UserPassword)
+        @Html.HiddenFor(model => model.ImageData)
+        @Html.HiddenFor(model => model.SubTime)  
+        @Html.HiddenFor(model => model.Email)
+        @Html.HiddenFor(model => model.isAdmin)             
+        <dt>
+            用户名：
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt>
+            用户密码：
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserPassword)
+        </dd>
+
+        <dt>
+            注册时间：
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubTime)
+        </dd>
+        <dt>
+            E-Mail：
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+           是否为超级管理员
+        </dt>
+
+        <dd>
+            @if (Model.isAdmin == 0)
+            {
+                @Html.DisplayName("该用户不是超级管理员");
+            }
+            else if (Model.isAdmin == 1)
+            {
+                @Html.DisplayName("该用户是超级管理员");
+            }
+        </dd>       
+        
+        <dt>
+            用户头像：
+        </dt>
+
+        <dd>
+            <img src="@Html.DisplayFor(model => model.ImageData)" alt="用户头像" width="50" height="50" />
+        </dd>
+
+    </dl>
+
+ 
+        <div class="form-actions no-color" style="width:280px; margin:10px auto; font-weight:bold;">
+            <input type="submit" value="确认删除" class="btn btn-default" />             
+            <br/><br /><br />
+            @Html.ActionLink("返回管理员信息管理页", "ShowUserInfo") &nbsp;丨 &nbsp; @Html.ActionLink("返回后台首页", "Index")
+        </div> 
+</div>
+}

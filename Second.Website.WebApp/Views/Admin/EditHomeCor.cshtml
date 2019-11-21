@@ -1,0 +1,100 @@
+﻿@model Second.Website.Model.HomeCor
+
+@{
+    ViewBag.Title = "编辑网站首页的基本信息";
+}
+<marquee scrollamount="8" direction="up" behavior="slide">
+    <h2>编辑网站首页的基本信息</h2>
+</marquee>
+
+@using (Html.BeginForm("EditHomeCor", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.IndexID)
+        @Html.HiddenFor(model=>model.Companylogo)
+        
+        <div class="form-group">
+            @Html.Label("注意：编辑的每项内容都不支持HTML标记", htmlAttributes: new { @style = "color:red;margin-left:130px;" })
+            <br/><br />
+            @Html.Label("网站标题", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IndexTitle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IndexTitle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+           @Html.Label("当前logo", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <img src="@Html.DisplayFor(model => model.Companylogo)" alt="网站LOGO" width="144" height="64" /> 
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("上传logo", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="Image" />
+            </div>
+        </div>
+        <div class="form-group">
+           @Html.Label("企业文化", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.CompanyCulture,5,50, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CompanyCulture, "", new { @class = "text-danger" })               
+            </div>
+        </div>
+
+        <div class="form-group">
+         @Html.Label("公司地址", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CompanyAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CompanyAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+        @Html.Label("到达公司路线", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CompanyRoute, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CompanyRoute, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+         @Html.Label("公司版权", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CompanyCopyright, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CompanyCopyright, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+         @Html.Label("公司电话", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Telephone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Telephone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+         @Html.Label("企业邮箱", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="保存更新" class="btn btn-default" />&nbsp;&nbsp; @ViewBag.EditHomeCorMessage  
+            </div>
+        </div>
+    </div>
+}
+
+<div style="width:260px; margin:30px 0 0 200px;">
+    @Html.ActionLink("返回首页信息管理页", "HomeCor") &nbsp;丨&nbsp; @Html.ActionLink("返回后台首页", "Index")
+</div>

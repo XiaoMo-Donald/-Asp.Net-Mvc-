@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="这里是网页的关键字，填写后方便SEO">
+    <meta name="description" content="这里是网页的介绍">
+    <!--检测浏览设备-->
+    <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"id="viewport"/>
+    <title>产品子页（自适应） - 第2组团队项目</title>
+
+    <!--引入CSS样式文件-->
+    <link type="text/css" rel="stylesheet" href="css/c_index.css">
+    <link type="text/css" rel="stylesheet" href="css/topBack.css">
+    <link rel="stylesheet" href="css/c_mobile.css" media="(min-width:300px) and (max-width:550px)"/><!--移动端自适应样式(phone)-->
+    <link rel="stylesheet" href="css/c_pad.css" media="(min-width:550px) and (max-width:990px)"/><!--移动端自适应样式(pad)-->
+    <!--引入js-->
+    <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="js/c_index.js"></script>
+</head>
+<body>
+
+    <!--右侧浮动返回顶部菜单代码开始(手机端去掉)-->
+    <div class="toolbar">
+        <a href="###" class="toolbar-item toolbar-item-weixin">
+            <span class="toolbar-layer"></span>
+        </a>
+        <a href="###" class="toolbar-item toolbar-item-feedback"></a>
+        <a href="###" class="toolbar-item toolbar-item-app">
+            <span class="toolbar-layer"></span>
+        </a>
+        <a href="javascript:scroll(0,0)" id="top" class="toolbar-item toolbar-item-top"></a>
+    </div>
+    <!--右侧浮动菜单代码结束-->
+    <!--头部-->
+    <header>
+        <div class="head">
+            <div class="logo">
+                <img src="images/logo.png" alt="02小组">
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="###">产品服务</a></li>
+                    <li><a href="#pMark">电脑软件</a></li>
+                    <li><a href="#mMark">手机软件</a></li>
+                    <li><a href="#tMark">科技商品</a></li>
+                    <li><img src="images/head_nav_menu_o.png" alt="更多" title="展开更多"></li>
+                </ul>
+            </div>
+
+            <!--手机端和Pad端导航菜单-->
+            <div class="m-nav">
+                <img src="images/head_nav_menu_o.png" alt="更多" title="展开更多" id="m_nav_menu">
+            </div>
+            <div class="m-inner-nav">
+                <a href="index.html">首页</a>
+                <a href="###">产品服务</a>
+                <a href="#pMark">电脑软件</a>
+                <a href="#mMark">手机软件</a>
+                <a href="#tMark">科技商品</a>
+                <a href="###">招贤纳士</a>
+            </div>
+            <!--手机端和Pad端导航菜单结束-->
+        </div>
+    </header>
+        <div class="main">
+            <div class="show products" >
+                <!--电脑软件-->
+                <div class="productsContent"  id="pMark">
+                    <div class="event_title">
+                        <h4 class="c_show">电脑软件</h4>
+                    </div>
+                    <div class="products_list">
+                        <ul>
+                            <li>
+                                <div class="img_box">
+                                    <a href="###">
+                                        <img src="images/Icon/PcSoftware1.png" alt="产品小图" width="90" height="90">
+                                    </a>
+                                </div>
+                                <div class="products_Info">
+                                    <h5>云OS浏览器</h5>
+                                    <p>简洁，只为速度</p>
+                                    <div class="download_box">
+                                            <div class="downloadbtn">
+                                                <a href="#" >下载 </a>
+                                            </div>
+                                        </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <a href="###">
+                                        <img src="images/Icon/PcSoftware2.png" alt="产品小图" width="90" height="90">
+                                    </a>
+                                </div>
+                                <div class="products_Info">
+                                    <h5>PC管家</h5>
+                                    <p>计算机的守护神</p>
+                                    <div class="download_box">
+                                        <div class="downloadbtn">
+                                            <a href="#" >下载 </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <a href="###">
+                                        <img src="images/Icon/PcSoftware3.png" alt="产品小图" width="90" height="90">
+                                    </a>
+                                </div>
+                                <div class="products_Info">
+                                    <h5>云商店</h5>
+                                    <p>海量APP等你来寻</p>
+                                    <div class="download_box">
+                                        <div class="downloadbtn">
+                                            <a href="#" >下载 </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <a href="###">
+                                        <img src="images/Icon/PcSoftware4.png" alt="产品小图" width="90" height="90">
+                                    </a>
+                                </div>
+                                <div class="products_Info">
+                                    <h5>云音乐</h5>
+                                    <p>极致音乐，喜欢你的生活</p>
+                                    <div class="download_box">
+                                        <div class="downloadbtn">
+                                            <a href="#" >下载 </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <a href="###">
+                                        <img src="images/Icon/PcSoftware5.png" alt="产品小图" width="90" height="90">
+                                    </a>
+                                </div>
+                                <div class="products_Info">
+                                    <h5>云视频</h5>
+                                    <p>海量资源,流畅视频体验</p>
+                                    <div class="download_box">
+                                        <div class="downloadbtn">
+                                            <a href="#" >下载 </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <a href="###">
+                                        <img src="images/Icon/PcSoftware6.png" alt="产品小图" width="90" height="90">
+                                    </a>
+                                </div>
+                                <div class="products_Info">
+                                    <h5>零号店</h5>
+                                    <p>足不出户，买!买!买！</p>
+                                    <div class="download_box">
+                                        <div class="downloadbtn">
+                                            <a href="#" >下载 </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--手机软件-->
+                <div class="productsContent2"  id="mMark">
+                        <div class="event_title">
+                            <h4 class="c_show">手机软件</h4>
+                        </div>
+                        <div class="products_list">
+                            <ul>
+                                <li>
+                                    <div class="img_box">
+                                        <a href="###">
+                                            <img src="images/Icon/PhoneSoftware1.png" alt="产品小图" width="90" height="90">
+                                        </a>
+                                    </div>
+                                    <div class="products_Info">
+                                        <h5>云地图</h5>
+                                        <p>人人都是老司机</p>
+                                        <div class="download_box">
+                                            <div class="downloadbtn">
+                                                <a href="#" >IOS </a>
+                                            </div>
+                                            <div class="downloadbtn">
+                                                <a href="#" >安卓 </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_box">
+                                        <a href="###">
+                                            <img src="images/Icon/PhoneSoftware2.png" alt="产品小图" width="90" height="90">
+                                        </a>
+                                    </div>
+                                    <div class="products_Info">
+                                        <h5>X极速云盘</h5>
+                                        <p>云上的日子，享你所想</p>
+                                        <div class="download_box">
+                                            <div class="downloadbtn">
+                                                <a href="#" >IOS </a>
+                                            </div>
+                                            <div class="downloadbtn">
+                                                <a href="#" >安卓 </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_box">
+                                        <a href="###">
+                                            <img src="images/Icon/PhoneSoftware3.png" alt="产品小图" width="90" height="90">
+                                        </a>
+                                    </div>
+                                    <div class="products_Info">
+                                        <h5>易图书</h5>
+                                        <p>掌握在你手中的图书馆</p>
+                                        <div class="download_box">
+                                            <div class="downloadbtn">
+                                                <a href="#" >IOS </a>
+                                            </div>
+                                            <div class="downloadbtn">
+                                                <a href="#" >安卓 </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_box">
+                                        <a href="###">
+                                            <img src="images/Icon/PhoneSoftware4.png" alt="产品小图" width="90" height="90">
+                                        </a>
+                                    </div>
+                                    <div class="products_Info">
+                                        <h5>Y聊</h5>
+                                        <p>Y聊每一天</p>
+                                        <div class="download_box">
+                                            <div class="downloadbtn">
+                                                <a href="#" >IOS </a>
+                                            </div>
+                                            <div class="downloadbtn">
+                                                <a href="#" >安卓 </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_box">
+                                        <a href="###">
+                                            <img src="images/Icon/PhoneSoftware5.png" alt="产品小图" width="90" height="90">
+                                        </a>
+                                    </div>
+                                    <div class="products_Info">
+                                        <h5>极客相机</h5>
+                                        <p>留住生活的每一刻精彩</p>
+                                        <div class="download_box">
+                                            <div class="downloadbtn">
+                                                <a href="#" >IOS </a>
+                                            </div>
+                                            <div class="downloadbtn">
+                                                <a href="#" >安卓 </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_box">
+                                        <a href="###">
+                                            <img src="images/Icon/PhoneSoftware6.png" alt="产品小图" width="90" height="90">
+                                        </a>
+                                    </div>
+                                    <div class="products_Info">
+                                        <h5>易下载</h5>
+                                        <p>专属下载通道，领先一切</p>
+                                        <div class="download_box">
+                                            <div class="downloadbtn">
+                                                <a href="#">IOS </a>
+                                            </div>
+                                            <div class="downloadbtn">
+                                                <a href="#">安卓 </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                <!--商品-->
+                <div class="productsContent3"  id="tMark">
+                    <div class="event_title">
+                        <h4 class="c_show">科技商品</h4>
+                    </div>
+                    <div class="products_list">
+                        <ul>
+                            <li>
+                                <div class="img_box2">
+                                    <a href="###">
+                                        <img src="images/Icon/productDemo1.gif" alt="产品小图" width="90" height="90">
+                                    </a>
+                                </div>
+                                <div class="products_Info">
+                                    <h5>X-Watch</h5>
+                                    <p>可穿戴的黑科技</p>
+                                    <div class="download_box">
+                                        <div class="downloadbtn">
+                                            <a href="#" >购买 </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box2">
+                                    <a href="###">
+                                        <img src="images/Icon/productDemo2.gif" alt="产品小图" width="90" height="90">
+                                    </a>
+                                </div>
+                                <div class="products_Info">
+                                    <h5>X-Phone8</h5>
+                                    <p>无繁琐，只有妙不可言</p>
+                                    <div class="download_box">
+                                        <div class="downloadbtn">
+                                            <a href="#" >购买 </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box2">
+                                    <a href="###">
+                                        <img src="images/Icon/productDemo3.gif" alt="产品小图" width="90" height="90">
+                                    </a>
+                                </div>
+                                <div class="products_Info">
+                                    <h5>X-极客耳机</h5>
+                                    <p>随时聆听现场演唱会</p>
+                                    <div class="download_box">
+                                        <div class="downloadbtn">
+                                            <a href="#" >购买 </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box2">
+                                    <a href="###">
+                                        <img src="images/Icon/productDemo6.gif" alt="产品小图" width="90" height="90">
+                                    </a>
+                                </div>
+                                <div class="products_Info">
+                                    <h5>X-NoteBook VI</h5>
+                                    <p>一身才华，一触，即发。</p>
+                                    <div class="download_box">
+                                        <div class="downloadbtn">
+                                            <a href="#" >购买 </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box2">
+                                    <a href="###">
+                                        <img src="images/Icon/productDemo4.gif" alt="产品小图" width="90" height="90">
+                                    </a>
+                                </div>
+                                <div class="products_Info">
+                                    <h5>X-Watch</h5>
+                                    <p>可穿戴的黑科技</p>
+                                    <div class="download_box">
+                                        <div class="downloadbtn">
+                                            <a href="#" >购买 </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box2">
+                                    <a href="###">
+                                        <img src="images/Icon/productDemo5.gif" alt="产品小图" width="90" height="90">
+                                    </a>
+                                </div>
+                                <div class="products_Info">
+                                    <h5>X-极客耳机</h5>
+                                    <p>随时聆听现场音乐会</p>
+                                    <div class="download_box">
+                                        <div class="downloadbtn">
+                                            <a href="#" >购买 </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+    <!--通用底部-->
+    <footer class="footer">
+        <div class="follow_box">
+            <h5>成为我们的粉丝</h5>
+            <ul>
+                <li class="wechat"><a href="###"></a></li>
+                <li class="sina"><a href="###"></a></li>
+                <li class="forum"><a href="###"></a></li>
+                <li class="post"><a href="###"></a></li>
+            </ul>
+            <div class="cl"></div>
+        </div>
+        <span><img src="images/love.gif" alt="我们一直用心在做"></span>
+        <p><a href="###">关于我们</a><a href="###">联系我们</a><a href="###">加入我们</a><a href="###">客户服务</a></p>
+        <p>Copyright &copy; 2016 TWO.925i.CN All Rights Reserved</p>
+    </footer>
+</body>
+</html>

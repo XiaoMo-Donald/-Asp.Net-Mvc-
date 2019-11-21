@@ -1,0 +1,74 @@
+﻿@model Second.Website.Model.Employee
+
+@{
+    ViewBag.Title = "DeleteEmployee";
+}
+<style>
+    div dl dt {
+        height: 50px;
+        line-height: 50px;
+    }
+
+    div dl dd {
+        height: 50px;
+        line-height: 50px;
+    }
+</style>
+<h2>删除一个管理员的信息</h2>
+<h4>本操作执行后不可恢复，请谨慎操作！</h4>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <dl class="dl-horizontal">
+            @Html.HiddenFor(model => model.EmpoloyeeID)
+            @Html.HiddenFor(model => model.EmpoloyeeName)
+            @Html.HiddenFor(model => model.EmpoloyeePost)
+            @Html.HiddenFor(model => model.EmpoloyeeInfo)
+            @Html.HiddenFor(model => model.EmpoloyeeInfo)
+            <dt>
+                员工姓名
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EmpoloyeeName)
+            </dd>
+
+            <dt>
+                员工职位：
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EmpoloyeePost)
+            </dd>
+
+            <dt>
+                员工简介：
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EmpoloyeeInfo)
+            </dd>
+
+            <dt>
+                员工照片：
+            </dt>
+
+            <dd>
+                <img src="@Html.DisplayFor(model => model.EmpoloyeePhoto)" alt="员工照片" width="50" height="50" />
+
+            </dd>
+
+        </dl>
+
+        <div class="form-actions no-color" style="margin:10px 80px; font-weight:bold;">
+            <input type="submit" value="确认删除" class="btn btn-default" />
+            <br /><br />
+            @Html.ActionLink("返回员工信息管理页", "ShowEmployee") &nbsp; 丨 &nbsp; @Html.ActionLink("返回后台首页", "Index")
+        </div>
+
+
+    </div>
+}

@@ -1,0 +1,64 @@
+﻿@model Second.Website.Model.Employee
+
+@{
+    ViewBag.Title = "编辑员工信息";
+}
+<marquee scrollamount="8" direction="up" behavior="slide">
+    <h2>编辑一个员工的信息</h2>
+</marquee>
+@using (Html.BeginForm("UpdateEmployee", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.EmpoloyeeID)
+        @Html.HiddenFor(model => model.EmpoloyeePhoto)
+        <div class="form-group">
+            @Html.Label("员工姓名", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmpoloyeeName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmpoloyeeName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+           @Html.Label("员工职位", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmpoloyeePost, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmpoloyeePost, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+           @Html.Label("员工简介", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmpoloyeeInfo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmpoloyeeInfo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("当前照片", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <img src="@Html.DisplayFor(model => model.EmpoloyeePhoto)" alt="员工照片" width="50" height="50" />
+            </div>
+        </div>
+        <div class="form-group">
+           @Html.Label("上传照片", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="image" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="保存编辑" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div style="margin:30px 110px;font-weight:bold">
+    @Html.ActionLink("返回员工信息管理页", "ShowEmployee") &nbsp;丨&nbsp;@Html.ActionLink("返回后台首页", "Index")
+</div>

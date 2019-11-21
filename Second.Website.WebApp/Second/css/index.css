@@ -1,0 +1,643 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    /*整站字体设置*/
+    font-size: 14px;
+    font-family:"Microsoft YaHei";
+    min-width: 1000px;
+}
+.cl{
+    clear: both;
+}
+header{
+    width: 100%;
+}
+
+/*头部样式 包括logo图标 导航栏*/
+.head{
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    height: 64px;
+    z-index: 99;
+}
+.head .logo{
+    float: left;
+    margin-left: 200px;
+    height: 64px;
+}
+.head .logo img{
+    width: 144px;
+    height: 64px;
+}
+.head .nav{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 610px;
+}
+.head .m-nav{
+    display: none;
+}
+.head .m-inner-nav{
+    display: none;
+}
+.head .nav ul li{
+    float: left;
+    margin:0 5px;
+    width: 100px;
+    line-height: 64px;
+    text-align: center;
+}
+
+.head .nav ul li a{
+    display: block;
+    color: #fff;
+    font-size: 16px;
+}
+.head .nav ul li a:hover{
+    background-color:rgba(255,255,255,.5);
+    font-size: 18px;
+}
+.head .nav ul li:last-child{
+    width: 50px;
+    padding-top: 4px;
+
+}
+.head .nav ul li:last-child img{
+    cursor: pointer;
+}
+.head .nav ul li:last-child a:hover{
+    background-color: transparent;
+    color: #fff;
+}
+
+/*头部样式 结束*/
+
+/*轮播图样式开始*/
+.wrap{
+    width:100%;
+    /*height:974px;*/
+    margin: 0px auto;
+    position: relative;
+    border-radius: 5px;
+    z-index: 88;
+
+}
+.wrap .banner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.wrap .banner li{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.banner li img{
+    width: 100%;
+    height: 100%;
+}
+.menu{
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    z-index: 99;
+    text-align: center;
+}
+.menu li{
+    display: inline-block;
+    width: 50px;
+    height: 10px;
+    background: #dcdcdc;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.wrap .menu .color{
+    background-color: lightseagreen;
+}
+.wrap .bannerText{
+    margin: 0 auto;
+    text-align: center;
+}
+.wrap .bannerText span:first-child{
+    width: 300px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    bottom: 180px;
+    color: white;
+    font-size: 16px;
+}
+.wrap .bannerText span:last-child{
+    position: absolute;
+    left: 50%;
+    margin-left: -44px;
+    bottom: 100px;
+    text-align: center;
+    line-height: 20px;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+}
+.wrap .bannerText span:last-child:hover{
+    border: 1px solid gray;
+}
+.wrap .bannerText span a{
+    color: white;
+    padding: 10px 14px;
+    display: block;
+}
+.wrap .bannerText span:last-child a:hover{
+    background-color: white;
+    color: black;
+}
+/*轮播图样式结束*/
+
+.main{
+    width: 100%;
+    margin: 0px auto;
+    border-top: 4px solid burlywood;
+}
+.show{
+    height: 300px;
+    box-sizing: border-box;
+}
+
+/*关于公司样式开始*/
+.main .aboutus{
+    width: 100%;
+    height: 505px;
+    background: #E5E7E8;
+    text-align: center;
+    overflow: hidden;
+}
+.aboutCentent{
+    width: 1000px;
+    margin: 0 auto;
+}
+.centent{
+    width: 100%;
+    height: 107px;
+}
+.title{
+    width: 177px;
+    height: 38px;
+    margin: 30px auto;
+}
+.title img{
+    display: block;
+    width: 177px;
+    height: 38px;
+}
+.about{
+    width: 329px;
+    height: 25px;
+    position: relative;
+    background: url("../images/xian.png") no-repeat;
+    margin: -16px auto;
+}
+.a_title{
+    position: absolute;
+    top: -8px;
+    left: 124px;
+    color: #7a7676;
+    font-size: 14px;
+}
+.t_title{
+    width: 358px;
+    height: 2px;
+    text-align: center;
+    margin: -20px auto;
+    *margin: 15px auto;
+}
+.main_txt{
+    margin: 62px auto;
+    *margin: 52px auto;
+    width: 900px;
+    height: 80px;
+    font-size: 14px;
+    color: #7f7f7f;
+}
+.icons{
+    width: 1000px;
+    height: 260px;
+    margin: -58px auto;
+    *margin: -48px auto;
+}
+.icons ul li{
+    width: 150px;
+    height: 260px;
+    float: left;
+    text-align: center;
+    margin: 0 50px;
+
+    transition:All 0.4s ease-in-out;
+    -webkit-transition:All 0.4s ease-in-out;
+    -moz-transition:All 0.4s ease-in-out;
+    -o-transition:All 0.4s ease-in-out;
+}
+.icons ul li:hover {
+    transform: translate(0, -10px);
+    -webkit-transform: translate(0, -10px);
+    -moz-transform: translate(0, -10px);
+    -o-transform: translate(0, -10px);
+    -ms-transform: translate(0, -10px);
+    -webkit-box-shadow: 0px 5px 15px #e5e5e5;
+    -moz-box-shadow: 0px 5px 15px #e5e5e5;
+    box-shadow: 0px 5px 15px #e5e5e5;
+}
+.icons ul li img:hover{
+    width: 160px;
+    height: auto;
+    z-index: 99;
+    filter: alpha(opacity=80);
+    opacity: .8;
+    -moz-opacity: .8;
+    -webkit-opacity: .8;
+
+}
+
+.last_icon{
+    margin-right: 0 !important;
+}
+.icon_title{
+    font-style: normal;
+    font-size: 16px;
+    width: 150px;
+    text-align: center;
+    margin-top: 10px;
+}
+.txt{
+    width: 150px;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #7f7f7f;
+}
+
+/*产品展示样式 开始*/
+.main .products{
+    width: 100%;
+    height: auto;
+    background: #F6F6F6;
+    overflow: hidden;
+    text-align: center;
+}
+.title02{
+    width:352px ;
+    height: 38px;
+    margin: 0 auto;
+}
+.title02 img{
+    margin-top:30px;
+}
+.title03{
+    width:305px ;
+    height: 38px;
+    margin: 0 auto;
+}
+.title03 img{
+    margin-top:30px;
+}
+.title04{
+    width:352px;
+    height: 38px;
+    margin: 0 auto;
+}
+.title04 img{
+    margin-top:30px;
+}
+.event_title {
+    margin: 34px auto;
+    margin-bottom: 30px;
+    width: 307px;
+    height: 20px;
+    position: relative;
+}
+.c_show{
+    position: absolute;
+    top: 2px;
+    left: 130px;
+    color: #7a7676;
+    font-size: 14px;
+
+}
+.main .products .productsContent{
+    width: 1000px;
+    height: auto;
+    margin: 0px auto;
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+
+.main .products .productsContent .products_list{
+    width:1000px;
+    left: 50%;
+    text-align: center;
+    margin: 5px auto;
+    overflow: hidden;
+}
+.main .products .productsContent .products_list ul li {
+    float: left;
+    width: 32%;
+    height:146px;
+    background: #fff;
+    margin: 6px;
+    text-align: center;
+    position: relative;
+    line-height: 22px;
+    /*过渡效果*/
+    transition:All 0.4s ease-in-out;
+    -webkit-transition:All 0.4s ease-in-out;
+    -moz-transition:All 0.4s ease-in-out;
+    -o-transition:All 0.4s ease-in-out;
+}
+.main .products .productsContent .products_list ul li:hover {
+    /*box-shadow: 0px 0px 12px rgba(0,0,0,.5);*/
+
+    transform:translate(0,-10px);
+    -webkit-transform:translate(0,-10px);
+    -moz-transform:translate(0,-10px);
+    -o-transform:translate(0,-10px);
+    -ms-transform:translate(0,-10px);
+    -webkit-box-shadow:0px 5px 15px #e5e5e5;
+    -moz-box-shadow:0px 5px 15px #e5e5e5;
+    box-shadow:0px 5px 15px #e5e5e5;
+}
+.img_box{
+    float: left;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 40px;
+    top: 30px;
+
+}
+.img_box a img{
+    border-radius: 5px;
+}
+.main .products .productsContent .products_list ul li .products_Info{
+    margin: 30px auto auto 80px;
+}
+
+.btn{
+    width: 86px;
+    height: 23px;
+    border: 1px solid lightslategrey;
+    border-radius: 10px;
+    margin: 20px auto;
+    text-align: center;
+
+}
+.btn a span{
+    font-weight: bold;
+    font-size: 14px;
+}
+.btn a{
+    line-height: 23px;
+    color:#7a7676;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.btn a:hover{
+    font-weight: bold;
+}
+/*产品展示样式结束*/
+
+/*团队展示样式开始*/
+.main .team{
+    width: 100%;
+    height: auto;
+    background: #E5E7E8;
+    position: relative;
+    overflow: hidden;
+}
+.main .team .teamBox{
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+.main .team .teamBox ul{
+    list-style: none;
+}
+.main .team .teamBox .teamPic{
+    margin-top: -5px;
+    height: 500px;
+}
+.main .team .teamBox .teamPic ul li{
+    float: left;
+    padding:2px;
+    height: auto;
+    width: 33.33333%;
+    box-sizing: border-box;
+}
+.main .team .teamBox .teamPic ul li .port-1{
+    float: left;
+    width: 100%;
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-sizing: border-box;
+
+}
+.main .team .teamBox .teamPic ul li .port-1.effect-2 .text-desc{
+    top: auto;
+    bottom: -100%;
+}
+.main .team .teamBox .teamPic ul li .port-1 .text-desc{
+    width: 100%;
+    opacity: 0.9;
+    top: -100%;
+    transition: 0.5s;
+    color: #000;
+    padding: 45px 20px 20px;
+    box-sizing: border-box;
+}
+.main .team .teamBox .teamPic ul li .port-1 .text-desc p{
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+.text-desc{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    height: 100%;
+    opacity: 0;
+    width: 100%;
+    padding: 20px;
+}
+.t_btn{
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #fff;
+    border: 2px solid #4d92d9;
+    background-color: #4d92d9;
+    text-decoration: none;
+    transition: 0.4s;
+}
+.t_btn:hover{
+    background-color: transparent;
+    color: #4d92d9;
+    transition: 0.4s;
+}
+.main .team .teamBox .teamPic ul li .port-1 img{
+    width: 100%;
+    height: 240px;
+    transition: 0.5s;
+}
+.main .team .teamBox .teamPic ul li .port-1:hover img {
+    transform: scale(1.2);
+}
+.main .team .teamBox .teamPic ul li .port-1.effect-2:hover .text-desc{
+    bottom: 0;
+}
+
+/*团队介绍代码结束*/
+
+/*公司地址样式开始 百度地图在线生成：http://api.map.baidu.com/lbsapi/creatmap/*/
+.main .address{
+    width: 100%;
+    height: 460px;
+    /*background-color: deeppink;*/
+    background: #F6F6F6;
+    /*text-align: center;*/
+    overflow: hidden;
+}
+.main .address .addressContent{
+    width: 1000px;
+    margin:0 auto;
+}
+.main .address .addressContent h1{
+    width:142px;
+    margin: 10px auto;
+}
+
+.main .address .addressContent .companyMapInfo{
+    float: left;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ccc;
+    color:#000;
+    line-height: 40px;
+    padding-left: 10px;
+}
+.main .address .addressContent .ditu{
+    float: left;
+    width: 680px;
+    height: 300px;
+    border:#ccc solid 1px;
+}
+.iw_poi_title {
+    color:#CC5522;
+    font-size:14px;
+    font-weight:bold;
+    overflow:hidden;
+    padding-right:13px;
+    white-space:nowrap;
+}
+.iw_poi_content {
+    font:12px arial,sans-serif;
+    overflow:visible;
+    padding-top:4px;
+    white-space:-moz-pre-wrap;
+    word-wrap:break-word;
+}
+/*公司地址样式结束*/
+
+
+/*底部样式开始*/
+.footer{
+    width: 100%;
+    height: 260px;
+    /*margin-top: 20px;*/
+    background-color: lightslategrey;
+    /*background: #9a9d9d;*/
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    border-top: 4px solid burlywood;
+}
+.footer .follow_box{
+    width: 248px;
+    font-size: 16px;
+    margin: 40px auto;
+    margin-bottom: 10px;
+}
+
+.footer .follow_box ul{
+    margin-top: 10px;
+}
+.footer .follow_box ul li{
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 6px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+.footer .follow_box ul li a{
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-image: url("../images/follow_spr.png");
+}
+.footer .follow_box .wechat a{
+    background-position:0 -1px;
+}
+.footer .follow_box .sina a{
+    background-position:-70px -1px;
+}
+.footer .follow_box .forum a{
+    background-position:-140px -1px;
+}
+.footer .follow_box .post a{
+    background-position:-210px -1px;
+}
+.footer .follow_box .wechat a:hover{
+    background-position:0  51px;
+}
+.footer .follow_box .sina a:hover{
+    background-position:-70px 51px;
+}
+.footer .follow_box .forum a:hover {
+    background-position: -140px 51px;
+}
+.footer .follow_box .post a:hover{
+    background-position:-210px 51px;
+}
+
+.footer p{
+    margin-top:10px;
+    box-sizing: border-box;
+}
+.footer p:last-child{
+    padding-bottom: 10px;
+}
+.footer p a{
+    color: white;
+    margin-left: 10px;
+}
+.footer p a:first-child{
+    margin-left: 0;
+}

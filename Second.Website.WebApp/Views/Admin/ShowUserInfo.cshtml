@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Second.Website.Model.UserInfo>
+
+@{
+    ViewBag.Title = "管理员信息列表";
+}
+<marquee scrollamount="8" direction="up" behavior="slide">
+    <h2>管理员信息列表</h2>
+</marquee>
+<marquee scrollamount="2" direction="up" behavior="slide">
+    <h4>本页面主要功能用于管理后台管理员信息</h4>
+</marquee>
+<style>
+    table {
+        text-align: center;
+    }
+
+        table tr th {
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+            table tr th:last-child {
+                width: 280px;
+            }
+
+        table tr td {
+            border: 1px solid #ddd;
+        }
+
+            table tr td.classTh {
+                padding: 20px 0;
+            }
+</style>
+<table class="table">
+    <tr>
+        <th>
+            用户名
+        </th>
+        <th>
+            用户密码
+        </th>
+        <th>
+            注册时间
+        </th>
+        <th>
+            E-Mail
+        </th>
+        <th>
+           是否为超级管理员
+        </th>
+        <th>
+            用户头像
+        </th>
+        <th style="text-align:center">
+            操作管理
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="classTh">
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td class="classTh">
+                @Html.DisplayFor(modelItem => item.UserPassword)
+            </td>
+            <td class="classTh">
+                @Html.DisplayFor(modelItem => item.SubTime)
+            </td>
+            <td class="classTh">
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td class="classTh">
+                @if (item.isAdmin==0)
+                {
+                    @Html.DisplayName("否");
+                }
+                else if (item.isAdmin == 1)
+                {
+                    @Html.DisplayName("是");
+                }               
+            </td>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.ImageData)" alt="暂无头像" width="50" height="50" />
+            </td>
+            <td style="text-align:center" class="classTh">
+                @Html.ActionLink("添加管理员", "CreateUserInfo")|
+                @Html.ActionLink("编辑更新", "EditUserInfo", new { id = item.UserID }) |
+                @Html.ActionLink("删除记录", "DeleteUserInfo", new { id = item.UserID })
+            </td>
+        </tr>
+    }
+
+</table>
+<div style="margin:30px auto; width:120px;font-weight:bold;">
+    @Html.ActionLink("返回后台管理首页", "Index")
+    @Html.Raw(ViewBag.PageList)
+</div>

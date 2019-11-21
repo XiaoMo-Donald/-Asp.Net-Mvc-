@@ -1,0 +1,64 @@
+﻿@*VS2013*@
+@using Second.Website.Model
+@{
+    ViewBag.Title = "Welcome！欢迎来到后台管理首页";
+}
+<style>
+    .CenterOnlie {
+        width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .MarTop {
+        margin-top: 50px;
+    }
+</style>
+<marquee scrollamount="8" direction="up" behavior="slide">
+    <h2 class="MarTop">亲爱的管理员【@Html.DisplayName(((UserInfo)Session["UserLogin"]).UserName.ToString())】,这里是后台管理首页</h2>
+</marquee>
+<hr />
+<div>
+    <p>
+        <marquee scrollamount="6" direction="up" behavior="slide">
+
+            <h3>
+                <b>本后台管理系统简介：</b>
+                <br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                欢迎光临后台管理系统，本管理系统是针对《Web开发课程》期中的前端项目开发。但是由于技术与时间等多方面原因，本后台仅仅实现了对数据库和前台数据的基本操作（增删改查分页）
+                <br /><br />
+                本后台框架搭建:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3层架构（MVC CodeFirst）: 模型层（Model）=>数据访问层（DAL）=>应用层（WebApp）
+            </h3>
+
+        </marquee>
+    </p>
+    <hr />
+    <marquee scrollamount="4" direction="up" behavior="slide">
+        <p>
+            <h3>
+                <b>开发人员：</b>
+            </h3>
+            <h3>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;莫广源
+            </h3>
+            <h3>
+                <b>项目功能：</b>
+            </h3>
+            <h3>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. 框架搭建、管理员模块、主页信息模块、对应的前台数据交互
+                <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.  子页产品管理模块搭建、对应的前台数据交互
+                <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. 团队成员管理模块搭建、对应的前台数据交互
+                <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. 公司简介管理模块搭建、对应的前台数据交互
+            </h3>
+        </p>
+    </marquee>
+    @*<hr />
+        <marquee behavior="slide" direction="up" scrollamount="3">
+            <h3><b>特别注意：</b><br />因为本站点后台技术未成熟，未能完美解决一些问题<br />所以《管理主页信息》项目需要先按以下步骤操作方可正常使用！</h3>
+        </marquee>
+        <hr />
+        <marquee behavior="slide" direction="up" scrollamount="1">
+            <p>@Html.ActionLink("第一次使用：请点击此处导入网站前台主页默认的基本信息", "CreateDefaultHomeCor")</p>
+        </marquee>*@
+
+</div>

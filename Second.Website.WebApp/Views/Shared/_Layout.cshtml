@@ -1,0 +1,90 @@
+﻿@using Second.Website.Model
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Asp.Net MVC后台+前台管理系统</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style>
+        /*footer {
+            width:560px;
+            margin: 30px auto;
+            font-size:16px;
+            text-align:center;
+        }*/
+        footer {
+            font-size: 16px;
+            margin-top: 30px;
+        }
+
+            footer p a {
+                float: right;
+            }
+
+        .logoC {
+            width: 130px;
+            height: 48px;
+            margin: 0;
+        }
+
+        .RightU {
+            margin-right: 15px;
+        }
+
+        .logoU {
+            margin: 10px 5px 0 50px;
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+        img.navbar-brand {
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" title="后台首页"><img src="~/Content/Second/images/logo.png" alt="后台LOGO" class="navbar-brand logoC" /></a>
+                @Html.ActionLink("网站主页", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", target = "_blank" })
+                @if (Session["UserLogin"] != null)
+                {
+                    @Html.ActionLink("管理员信息", "ShowUserInfo", "Admin", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("主页信息管理", "HomeCor", "Admin", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("公司简介管理", "ShowAboutUS", "Admin", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("团队成员管理", "ShowEmployee", "Admin", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("子页产品管理", "ShowSubpageProduct", "Admin", new { area = "" }, new { @class = "navbar-brand RightU" })
+
+                    <a href="~/Admin/EditUserInfo?id=@(((UserInfo)Session["UserLogin"]).UserID)" title="个人信息"><img src="@(((UserInfo)Session["UserLogin"]).ImageData)" alt="头像" area="" class="navbar-brand logoU" /></a>
+
+                    @Html.ActionLink("注销登录", "Logout", "Admin", new { area = "" }, new { @class = "navbar-brand" })
+                }
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>Copyright &copy; @DateTime.Now.Year - 后台管理系统（Web开发期末项目） All Rights Reserved.<a target="_blank" href="http://sighttp.qq.com/authd?IDKEY=3a71033e1a3b3f347a5bb74ad4491509f280819ad7bd5dc8"><img style="display:inline-block" border="0" src="~/Content/Second/images/ICON/contactUsByQQ.png" alt="联系开发团队" title="联系开发团队" /></a></p>
+        </footer>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

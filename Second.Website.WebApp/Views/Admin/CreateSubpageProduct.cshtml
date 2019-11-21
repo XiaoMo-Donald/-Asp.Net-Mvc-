@@ -1,0 +1,98 @@
+﻿@model Second.Website.Model.SubpageProduct
+
+@{
+    ViewBag.Title = "添加新产品";
+}
+
+<h2>添加新产品</h2>
+
+@using (Html.BeginForm("CreateSubpageProduct", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+          @Html.HiddenFor(model => model.ProductTime)
+        <div class="form-group" style="margin:10px auto;width:700px">
+            @Html.Label("产品名称", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="margin:10px auto;width:700px">
+            @Html.Label("产品信息", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ProductInfo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ProductInfo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="margin:10px auto;width:700px">
+            @Html.Label("上传产品图标", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="images" />
+            </div>
+        </div>
+        <div class="form-group" style="margin:10px auto;width:700px">
+            @Html.Label("类别编号", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">         
+                <select name="ClassID">
+                    <option value="1">电脑产品</option>
+                    <option value="2">移动产品</option>
+                    <option value="3">科技产品</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group" style="margin:10px auto;width:700px">
+            @Html.Label("特色分类", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select name="Features">
+                    <option value="0">非特色产品</option>
+                    <option value="1">特色产品</option>
+                </select>
+                <span>说明（特色产品在前台首页显示)</span>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin:10px auto;width:700px">
+            @Html.Label("电脑版下载地址（完整的URL）", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PcDownLink, new { htmlAttributes = new { @class = "form-control"} })
+                @Html.ValidationMessageFor(model => model.PcDownLink, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="margin:10px auto;width:700px">
+            @Html.Label("安卓版下载地址（完整的URL）", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ardDownLink, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ardDownLink, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="margin:10px auto;width:700px">
+            @Html.Label("IOS版下载地址（完整的URL）", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.iosDownLink, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.iosDownLink, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="margin:10px auto;width:700px">
+            @Html.Label("科技商品购买地址（完整的URL）", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BuyLink, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BuyLink, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="margin:10px auto;margin-top:30px; width:700px">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="添加" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div style="margin:30px auto; width:380px;font-weight:bold;">
+    @Html.ActionLink("返回产品管理页", "ShowSubpageProduct") &nbsp;丨&nbsp;@Html.ActionLink("返回后台首页", "Index")
+</div>

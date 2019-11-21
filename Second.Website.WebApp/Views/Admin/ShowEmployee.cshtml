@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Second.Website.Model.Employee>
+
+@{
+    ViewBag.Title = "员工信息管理页";
+}
+<marquee scrollamount="8" direction="up" behavior="slide">
+    <h2>管理公司的员工信息</h2>
+</marquee>
+<marquee scrollamount="2" direction="up" behavior="slide">
+    <h4>本页面内容显示于前台的员工（Team）模块</h4>
+</marquee>
+<style>
+    table {
+        text-align: center;
+    }
+
+        table tr th {
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+            table tr th:last-child {
+                width: 280px;
+            }
+
+        table tr td {
+            border: 1px solid #ddd;
+        }
+
+            table tr td.classTh {
+                padding: 20px 0;
+            }
+</style>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.EmpoloyeeName)*@
+            员工姓名
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.EmpoloyeePost)*@
+            员工职位
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.EmpoloyeeInfo)*@
+            员工简介
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.EmpoloyeePhoto)*@
+            员工照片
+        </th>
+        <th style="text-align:center">
+            操作管理
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpoloyeeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpoloyeePost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpoloyeeInfo)
+        </td>  
+        <td>
+            <img src="@Html.DisplayFor(modelItem => item.EmpoloyeePhoto)" alt="Alternate Text" width="50" height="50" />
+        </td>
+        <td style="text-align:center" class="classTh">
+            @Html.ActionLink("添加员工", "CreateEmployee")|
+            @Html.ActionLink("编辑更新", "UpdateEmployee", new { id = item.EmpoloyeeID }) |
+            @Html.ActionLink("删除记录", "DeleteEmployee", new { id = item.EmpoloyeeID })
+        </td>
+    </tr>
+}
+
+</table>
+@Html.Raw(ViewBag.PageList)
+<div style="margin:30px auto; width:120px;font-weight:bold;">
+    @Html.ActionLink("返回后台管理首页", "Index")
+    
+</div>

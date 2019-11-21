@@ -1,0 +1,134 @@
+﻿@model IEnumerable<Second.Website.Model.SubpageProduct>
+
+@{
+    ViewBag.Title = "产品子页管理页";
+}
+<style>
+    table {
+        text-align: center;
+    }
+
+        table tr th {
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+            table tr th:last-child {
+                width: 210px;
+            }
+
+        table tr td {
+            border: 1px solid #ddd;
+        }
+</style>
+<marquee scrollamount="8" direction="up" behavior="slide">
+    <h2>产品子页管理页</h2>
+</marquee>
+<marquee scrollamount="2" direction="up" behavior="slide">
+    <h4>本页面主要管理主页的特色产品和子页的产品（Product）模块</h4>
+</marquee>
+<table class="table">
+    <tr>
+        <th>
+            产品名称
+        </th>
+        <th>
+            产品信息
+        </th>
+        <th>
+            产品发布时间
+        </th>
+        <th>
+            产品图标
+        </th>
+        <th>
+            产品类别
+        </th>
+        <th>
+            是否特色产品
+        </th>
+        <th>
+            电脑版下载地址（完整的URL）
+        </th>
+        <th>
+            安卓版下载地址（完整的URL）
+        </th>
+        <th>
+            IOS版下载地址（完整的URL）
+        </th>
+        <th>
+            科技商品购买地址（完整的URL）
+        </th>
+        <th style="text-align:center">
+            操作管理
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="vertical-align:middle">
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td style="vertical-align:middle">
+                @Html.DisplayFor(modelItem => item.ProductInfo)
+            </td>
+            <td style="vertical-align:middle">
+                @Html.DisplayFor(modelItem => item.ProductTime)
+            </td>
+            <td style="vertical-align:middle">
+                <img src="@Html.DisplayFor(modelItem => item.ProductPhotoFile)" alt="产品图标" width="50" height="50" />
+            </td>
+            <td style="vertical-align:middle">
+                @if (item.ClassID == 1)
+                {
+                    @Html.DisplayName("电脑产品");
+                }
+                @if (item.ClassID == 2)
+                {
+                    @Html.DisplayName("手机产品");
+                }
+                @if (item.ClassID == 3)
+                {
+                    @Html.DisplayName("科技商品");
+                }
+            </td>
+            <td style="vertical-align:middle">
+                @if (item.Features == 0)
+                {
+                    @Html.DisplayName("否");
+                }
+                @if (item.Features == 1)
+                {
+                    @Html.DisplayName("是");
+                }
+            </td>
+            <td style="vertical-align:middle">
+                @Html.TextAreaFor(modelItem => item.PcDownLink, 3, 10, htmlAttributes: new { })
+            </td>
+            <td style="vertical-align:middle">
+                @Html.TextAreaFor(modelItem => item.ardDownLink, 3, 10, htmlAttributes: new { })
+            </td>
+            <td style="vertical-align:middle">
+                @Html.TextAreaFor(modelItem => item.iosDownLink, 3, 10, htmlAttributes: new { })
+            </td>
+            <td style="vertical-align:middle">
+                @Html.TextAreaFor(modelItem => item.BuyLink, 3, 10, htmlAttributes: new { })
+            </td>
+            <td style="text-align:center;vertical-align:middle" class="classTh">
+                @Html.ActionLink("添加产品", "CreateSubpageProduct")|
+                    @Html.ActionLink("编辑更新", "UpdateSubpageProduct", new { id = item.ProductID }) |
+                    @Html.ActionLink("删除该项", "DeleteSubpageProduct", new { id = item.ProductID })
+               
+            </td>
+        </tr>
+    }
+
+</table>
+<div style="margin:30px auto; width:120px">
+    @Html.Raw(ViewBag.PageList)
+</div>
+<hr />
+<div style="margin:30px auto; width:120px;font-weight:bold;">
+    @Html.ActionLink("返回后台管理首页", "Index")
+
+</div>

@@ -1,0 +1,81 @@
+﻿@model Second.Website.Model.UserInfo
+
+@{
+    ViewBag.Title = "编辑管理员信息";
+}
+<marquee scrollamount="8" direction="up" behavior="slide">
+    <h2>编辑管理员的信息</h2>
+</marquee>
+@using (Html.BeginForm("EditUserInfo", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{ @Html.AntiForgeryToken()   <div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.UserID)
+    @Html.HiddenFor(model => model.SubTime)
+    @Html.HiddenFor(model => model.UserName)
+    @Html.HiddenFor(model => model.ImageData)
+    @*@Html.HiddenFor(model => model.Email)*@
+    <div class="form-group" style="margin:10px auto;width:610px">
+        @Html.Label("用户名", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", disabled = "disabled " } })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" style="margin:10px auto;width:610px">
+        @Html.Label("用户密码", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.UserPassword, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.UserPassword, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" style="margin:10px auto;width:610px">
+        @Html.Label("E-Mail", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "请输入邮箱..." } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    @*超级管理员才能够给普通设置超级权限*@
+    @if (((Second.Website.Model.UserInfo)Session["UserLogin"]).isAdmin == 1)
+    {
+        if (Model.isAdmin != 1)
+        {
+            if (((Second.Website.Model.UserInfo)Session["UserLogin"]).UserID != Model.UserID)
+            {
+                <div class="form-group" style="margin:10px auto;width:610px">
+                    @Html.Label("是否设置超级管理员", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <select name="isAdmin" style="width:100px;margin-top:15px;text-align:center">
+                            <option value="0">否</option>
+                            <option value="1">是</option>
+                        </select>
+                    </div>
+                </div>
+            }
+        }
+    }
+    <div class="form-group" style="margin:10px auto;width:610px">
+        @Html.Label("当前头像", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <img src="@Html.DisplayFor(model => model.ImageData)" alt="用户头像" width="200" height="200" />
+        </div>
+    </div>
+    <div class="form-group" style="margin:10px auto;width:610px">
+        @Html.Label("上传新头像", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="image" />
+        </div>
+    </div>
+    <div class="form-group" style="margin:10px auto;width:610px">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="保存编辑" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div style="margin:30px auto; width:350px;font-weight:bold">
+    @Html.ActionLink("返回管理员信息管理页", "ShowUserInfo") &nbsp;丨&nbsp;@Html.ActionLink("返回后台首页", "Index")
+</div>
+

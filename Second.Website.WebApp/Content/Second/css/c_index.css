@@ -1,0 +1,370 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    font-size: 14px;
+    min-width: 1000px;
+    font-family:"Microsoft YaHei";
+}
+.cl{
+    clear: both;
+}
+/*头部*/
+.head{
+
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    height: 64px;
+    z-index: 100;
+}
+.head .logo{
+    float: left;
+    margin-left: 200px;
+    height: 65px;
+}
+.head .logo img{
+    width: 144px;
+    height: 64px;
+}
+.head .m-nav{
+    display: none;
+}
+.head .m-inner-nav{
+    display: none;
+}
+.head .nav{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 610px;
+}
+.head .nav ul li{
+    float: left;
+    margin:0 5px;
+    width: 100px;
+    line-height: 64px;
+    text-align: center;
+}
+.head .nav ul li a{
+    display: block;
+    color: #fff;
+    font-size: 16px;
+}
+.head .nav ul li a:hover{
+    background-color:rgba(255,255,255,.5);
+    font-size: 18px;
+}
+.head .nav ul li:last-child{
+    width: 50px;
+    padding-top: 5px;
+}
+.head .nav ul li:last-child img{
+    cursor: pointer;
+}
+.head .nav ul li:last-child a:hover{
+    background-color: transparent;
+    color: #fff;
+}
+/*主内容*/
+.main{
+    width: 100%;
+}
+.show{
+    height: 300px;
+    box-sizing: border-box;
+}
+.main .products{
+    width: 100%;
+    height: auto;
+    background: #F6F6F6;
+    overflow: hidden;
+    text-align: center;
+}
+.event_title {
+    margin: 35px auto;
+    margin-bottom: 30px;
+    width: 307px;
+    height: 20px;
+    position: relative;
+}
+.c_show{
+    position: absolute;
+    top: 2px;
+    left: 95px;
+    color: #7a7676;
+    font-size: 30px;
+}
+.main .products .productsContent{
+    width: 1000px;
+    height: auto;
+    margin: 0px auto;
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+.main .products .productsContent .products_list{
+    width:1000px;
+    left: 50%;
+    text-align: center;
+    margin: 5px auto;
+    overflow: hidden;
+}
+.main .products .productsContent .products_list ul li {
+    float: left;
+    width: 32%;
+    height:146px;
+    background: #fff;
+    margin: 6px;
+    text-align: center;
+    position: relative;
+    line-height: 22px;
+    transition:All 0.4s ease-in-out;
+    -webkit-transition:All 0.4s ease-in-out;
+    -moz-transition:All 0.4s ease-in-out;
+    -o-transition:All 0.4s ease-in-out;
+    border-radius: 20px;
+}
+/*鼠标经过效果，沿用组长成品*/
+.main .products .productsContent .products_list ul li:hover {
+    transform:translate(0,-10px);
+    -webkit-transform:translate(0,-10px);
+    -moz-transform:translate(0,-10px);
+    -o-transform:translate(0,-10px);
+    -ms-transform:translate(0,-10px);
+    -webkit-box-shadow:0px 5px 15px #e5e5e5;
+    -moz-box-shadow:0px 5px 15px #e5e5e5;
+    box-shadow:0px 5px 15px #e5e5e5;
+}
+.main .products .productsContent .products_list ul li .products_Info{
+    margin: 40px auto auto 80px;
+}
+.main .products .productsContent .products_list ul li .products_Info h5{
+    font-size: 19px;
+}
+.main .products .productsContent2{
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    padding-top: 10px;
+    background: #e5e7e8;
+    margin-bottom: 30px;
+}
+.main .products .productsContent2 .products_list{
+    width:1000px;
+    left: 50%;
+    text-align: center;
+    margin: 5px auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+.main .products .productsContent2 .products_list ul li {
+    float: left;
+    width: 32%;
+    height:146px;
+    background: #fff;
+    margin: 6px;
+    text-align: center;
+    position: relative;
+    line-height: 22px;
+    transition:All 0.4s ease-in-out;
+    -webkit-transition:All 0.4s ease-in-out;
+    -moz-transition:All 0.4s ease-in-out;
+    -o-transition:All 0.4s ease-in-out;
+    border-radius: 20px;
+}
+.main .products .productsContent2 .products_list ul li:hover {
+    transform:translate(0,-10px);
+    -webkit-transform:translate(0,-10px);
+    -moz-transform:translate(0,-10px);
+    -o-transform:translate(0,-10px);
+    -ms-transform:translate(0,-10px);
+    -webkit-box-shadow:0px 5px 15px #e5e5e5;
+    -moz-box-shadow:0px 5px 15px #e5e5e5;
+    box-shadow:0px 5px 15px #e5e5e5;
+}
+.main .products .productsContent2 .products_list ul li .products_Info{
+    margin: 30px auto auto 80px;
+}
+.main .products .productsContent2 .products_list ul li .products_Info h5{
+    font-size: 19px;
+}
+.main .products .productsContent3{
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    margin-bottom: 30px;
+}
+.main .products .productsContent3 .products_list{
+    width:1000px;
+    left: 50%;
+    text-align: center;
+    margin: 5px auto;
+    overflow: hidden;
+}
+.main .products .productsContent3 .products_list ul li {
+    float: left;
+    width: 32%;
+    height:300px;
+    background: #e5e7e8;
+    margin: 6px;
+    text-align: center;
+    position: relative;
+    line-height: 22px;
+    transition:All 0.4s ease-in-out;
+    -webkit-transition:All 0.4s ease-in-out;
+    -moz-transition:All 0.4s ease-in-out;
+    -o-transition:All 0.4s ease-in-out;
+    border-radius: 20px;
+}
+.main .products .productsContent3 .products_list ul li:hover {
+    transform:translate(0,-10px);
+    -webkit-transform:translate(0,-10px);
+    -moz-transform:translate(0,-10px);
+    -o-transform:translate(0,-10px);
+    -ms-transform:translate(0,-10px);
+    -webkit-box-shadow:0px 5px 15px #e5e5e5;
+    -moz-box-shadow:0px 5px 15px #e5e5e5;
+    box-shadow:0px 5px 15px #e5e5e5;
+}
+.main .products .productsContent3 .products_list ul li .products_Info{
+    margin: 210px auto;
+}
+.main .products .productsContent3 .products_list ul li .products_Info h5{
+    font-size: 19px;
+}
+.img_box{
+    float: left;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 25px;
+    top: 30px;
+}
+.img_box a img{
+    border-radius: 5px;
+}
+.img_box2{
+    float: right;
+    width: 90%;
+    height: 65%;
+    position: absolute;
+    left: 5%;
+    top: 20px;
+}
+.img_box2 a img{
+    width: 95%;
+    height: 90%;
+}
+.btn{
+    width: 83px;
+    height: 23px;
+    border: 3px solid lightslategrey;
+    border-radius: 10px;
+    margin: 10px auto;
+    text-align: center;
+    top: 10px;
+}
+.btn a span{
+    font-weight: bold;
+    font-size: 14px;
+}
+.btn a{
+    line-height: 18px;
+    color:#7a7676;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.downloadbtn{
+    width: 50px;
+    height: 23px;
+    border: 1px solid lightslategrey;
+    border-radius: 10px;
+    margin: 10px auto;
+    text-align: center;
+}
+.downloadbtn a span{
+    font-weight: bold;
+    font-size: 14px;
+}
+.downloadbtn a{
+    line-height: 20px;
+    color:#7a7676;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+/*底部*/
+.footer{
+    width: 100%;
+    height: 260px;
+    /*margin-top: 20px;*/
+    background-color: lightslategrey;
+    /*background: #9a9d9d;*/
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+.footer .follow_box{
+    width: 248px;
+    font-size: 16px;
+    margin: 40px auto;
+    margin-bottom: 10px;
+}
+
+.footer .follow_box ul{
+    margin-top: 10px;
+}
+.footer .follow_box ul li{
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 6px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+.footer .follow_box ul li a{
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-image: url("../images/follow_spr.png");
+}
+.footer .follow_box .wechat a{
+    background-position:0 -1px;
+}
+.footer .follow_box .sina a{
+    background-position:-70px -1px;
+}
+.footer .follow_box .forum a{
+    background-position:-140px -1px;
+}
+.footer .follow_box .post a{
+    background-position:-210px -1px;
+}
+.footer .follow_box .wechat a:hover{
+    background-position:0  51px;
+}
+.footer .follow_box .sina a:hover{
+    background-position:-70px 51px;
+}
+.footer .follow_box .forum a:hover {
+    background-position: -140px 51px;
+}
+.footer .follow_box .post a:hover{
+    background-position:-210px 51px;
+}
+.footer p{
+    margin-top:10px;
+    box-sizing: border-box;
+}
+.footer p:last-child{
+    padding-bottom: 10px;
+}
+.footer p a{
+    color: white;
+    margin-left: 10px;
+}
+.footer p a:first-child{
+    margin-left: 0;
+}

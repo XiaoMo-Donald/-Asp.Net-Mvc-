@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "第一次使用，请创建数据库";
+}
+<marquee scrollamount="8" direction="up" behavior="slide">
+    <h2>第一次使用，请创建数据库</h2>
+</marquee>
+<br />
+<form action="CreateDatabase" method="post">
+    <input type="submit" name="name" value="第1步：请点击此处创建一个数据库" />
+</form>
+<br />
+<p>@Html.Raw(ViewBag.CreateDBEorr)</p>
+    @*<p>@Html.Raw(ViewBag.CreateDatabaseMessage)</p>
+    <p>@Html.Raw(ViewBag.CreatedefaultAdminMessag)</p>
+    <p>@Html.Raw(ViewBag.CreateBaseAndAdminMessag)</p>*@
+
